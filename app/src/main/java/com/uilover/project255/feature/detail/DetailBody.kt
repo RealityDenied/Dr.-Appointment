@@ -31,6 +31,8 @@ import com.uilover.project255.feature.detail.components.VerticalDivider
 @Composable
 fun DetailBody(
     item: DoctorModel,
+    canBook: Boolean,
+    onMakeAppointmentClick: () -> Unit,
     onOpenWebsite: (String) -> Unit,
     onSendSms: (String, String) -> Unit,
     onDial: (String) -> Unit,
@@ -155,18 +157,21 @@ fun DetailBody(
         }
 
         Button(
-            onClick = {},
+            onClick = onMakeAppointmentClick,
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp),
             shape = RoundedCornerShape(100.dp),
+            enabled = canBook,
             colors = ButtonDefaults.buttonColors(
                 containerColor = colorResource(R.color.darkPurple),
-                contentColor = Color.White
+                contentColor = Color.White,
+                disabledContainerColor = colorResource(R.color.gray),
+                disabledContentColor = Color.White
             )
         ) {
             Text(
-                text = "Make Appointment",
+                text = if (canBook) "Make Appointment" else "Log in as patient to book",
                 fontSize = 18.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(vertical = 8.dp)

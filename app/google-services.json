@@ -1,13 +1,14 @@
 {
   "project_info": {
-    "project_number": "1020302041413",
-    "project_id": "project255-2d95d",
-    "storage_bucket": "project255-2d95d.firebasestorage.app"
+    "project_number": "925424418185",
+    "firebase_url": "https://dr-appointment-47da4-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "dr-appointment-47da4",
+    "storage_bucket": "dr-appointment-47da4.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1020302041413:android:017094569a4c3742235e2c",
+        "mobilesdk_app_id": "1:925424418185:android:a43db9f6c4431aa1cb7558",
         "android_client_info": {
           "package_name": "com.uilover.project255"
         }
@@ -15,7 +16,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDRdsLqx-1dT6Ed19PevpiqQXE9i7kPUzo"
+          "current_key": "AIzaSyDViCEMuugFQbxV5vjIUX9LcO-TxG2JVDk"
         }
       ],
       "services": {

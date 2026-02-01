@@ -16,5 +16,6 @@ data class DoctorModel(
     val Mobile: String="",
     val Patiens: String="",
     val Rating: Double=0.0,
-    val Site: String=""
+    val Site: String="",
+    val key: String=""
 ): Parcelable

@@ -17,9 +17,12 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -42,9 +45,9 @@ import com.uilover.project255.core.model.DoctorModel
 private fun DoctorCard(item: DoctorModel, onClick: () -> Unit) {
     Card(
         modifier = Modifier
-            .padding(8.dp)
-            .size(width = 190.dp, height = 260.dp),
-        shape = RoundedCornerShape(10.dp),
+            .padding(10.dp)
+            .size(width = 220.dp, height = 300.dp),
+        shape = RoundedCornerShape(12.dp),
         elevation = CardDefaults.cardElevation(defaultElevation = 3.dp),
         colors = CardDefaults.cardColors(
             containerColor = Color.White
@@ -54,36 +57,45 @@ private fun DoctorCard(item: DoctorModel, onClick: () -> Unit) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(8.dp),
+                .padding(12.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Box(
                 modifier = Modifier
-                    .size(165.dp)
-                    .clip(RoundedCornerShape(10.dp))
+                    .size(196.dp)
+                    .clip(RoundedCornerShape(12.dp))
                     .background(colorResource(R.color.lightPurple)),
                 contentAlignment = Alignment.Center
             ) {
-                AsyncImage(
-                    model = item.Picture,
-                    contentDescription = null,
-                    modifier = Modifier.fillMaxSize(),
-                    contentScale = ContentScale.Fit
-                )
+                if (item.Picture.isNotBlank()) {
+                    AsyncImage(
+                        model = item.Picture,
+                        contentDescription = null,
+                        modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.Fit
+                    )
+                } else {
+                    Icon(
+                        imageVector = Icons.Filled.Person,
+                        contentDescription = null,
+                        modifier = Modifier.size(80.dp),
+                        tint = colorResource(R.color.darkPurple)
+                    )
+                }
             }
-            Spacer(Modifier.height(8.dp))
+            Spacer(Modifier.height(10.dp))
             Text(
                 text = item.Name ?: "name",
                 color = Color.Black,
-                fontSize = 16.sp,
+                fontSize = 18.sp,
                 fontWeight = FontWeight.Bold
             )
-            Spacer(Modifier.height(4.dp))
+            Spacer(Modifier.height(6.dp))
             Text(
                 text = item.Special ?: "special",
                 color = colorResource(R.color.gray),
                 fontWeight = FontWeight.Bold,
-                fontSize = 12.sp
+                fontSize = 14.sp
             )
             Spacer(Modifier.weight(1f))
 
@@ -99,7 +111,8 @@ private fun DoctorCard(item: DoctorModel, onClick: () -> Unit) {
                 Text(
                     text = (item.Rating ?: 0.0).toString(),
                     color = Color.Black,
-                    fontWeight = FontWeight.Bold
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 14.sp
                 )
 
                 Spacer(Modifier.weight(1f))
@@ -114,7 +127,8 @@ private fun DoctorCard(item: DoctorModel, onClick: () -> Unit) {
                 Text(
                     text = "${item.Expriense ?: 0} Year",
                     color = Color.Black,
-                    fontWeight = FontWeight.Bold
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 14.sp
                 )
             }
         }
@@ -130,7 +144,7 @@ fun DoctorRow(
         Modifier
             .padding(top = 16.dp)
             .fillMaxWidth()
-            .heightIn(min = 260.dp)
+            .heightIn(min = 320.dp)
     ) {
         if (items.isEmpty()) {
             CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))

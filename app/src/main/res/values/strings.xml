@@ -2,4 +2,49 @@
     <string name="app_name">project255</string>
     <string name="get_started">Get Started</string>
     <string name="sub_intro">Exceptional Care \nClose to you</string>
+
+    <!-- Role selection -->
+    <string name="im_doctor">I\'m a Doctor</string>
+    <string name="im_patient">I\'m a Patient</string>
+    <string name="choose_role">Choose how you want to continue</string>
+
+    <!-- Auth common -->
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="dont_have_account">Don\'t have an account? Sign up</string>
+    <string name="have_account">Already have an account? Login</string>
+
+    <!-- Doctor sign up form -->
+    <string name="doctor_profile">Doctor profile</string>
+    <string name="address">Address</string>
+    <string name="biography">Biography</string>
+    <string name="name">Name</string>
+    <string name="picture_url">Picture URL</string>
+    <string name="specialty">Specialty</string>
+    <string name="experience_years">Experience (years)</string>
+    <string name="location">Location</string>
+    <string name="mobile">Mobile</string>
+    <string name="patients_count">Patients (e.g. 500+)</string>
+    <string name="website_optional">Website (optional)</string>
+
+    <!-- Patient sign up -->
+    <string name="patient_profile">Patient profile</string>
+    <string name="phone_number">Phone number</string>
+
+    <!-- Account -->
+    <string name="new_user">New User</string>
+    <string name="account">Account</string>
+    <string name="back">Back</string>
+    <string name="logout">Logout</string>
+    <string name="edit_profile">Edit profile</string>
+    <string name="save">Save</string>
+    <string name="upcoming_appointments">Upcoming appointments</string>
+    <string name="no_appointments">No upcoming appointments</string>
+
+    <!-- Errors -->
+    <string name="error_fill_all">Please fill all required fields</string>
+    <string name="error_auth_failed">Authentication failed</string>
+    <string name="error_select_specialization">Select at least one specialization</string>
 </resources>

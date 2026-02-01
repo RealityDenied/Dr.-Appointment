@@ -19,6 +19,8 @@ import com.uilover.project255.core.model.DoctorModel
 fun DetailScreen(
     item: DoctorModel,
     onBack: () -> Unit,
+    canBook: Boolean,
+    onMakeAppointmentClick: () -> Unit,
     onOpenWebsite: (String) -> Unit,
     onSendSms: (mobile: String, body: String) -> Unit,
     onDial: (mobile: String) -> Unit,
@@ -41,6 +43,8 @@ fun DetailScreen(
             ){
                 DetailBody(
                     item = item,
+                    canBook = canBook,
+                    onMakeAppointmentClick = onMakeAppointmentClick,
                     onOpenWebsite = onOpenWebsite,
                     onSendSms = onSendSms,
                     onDial = onDial,

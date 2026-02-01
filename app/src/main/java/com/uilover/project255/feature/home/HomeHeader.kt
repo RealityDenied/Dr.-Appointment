@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.sp
 import com.uilover.project255.R
 
 @Composable
-fun HomeHeader() {
+fun HomeHeader(userName: String = "New User") {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -33,7 +33,7 @@ fun HomeHeader() {
                 .padding(horizontal = 16.dp)
         ) {
             Text(
-                text = "Hi, mohsen jamali",
+                text = "Hi, $userName",
                 color = Color.Black,
                 fontSize = 18.sp,
                 fontWeight = FontWeight.Bold

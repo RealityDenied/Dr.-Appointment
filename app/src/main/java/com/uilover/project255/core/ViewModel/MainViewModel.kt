@@ -34,7 +34,9 @@ class MainViewModel : ViewModel() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val items = mutableListOf<CategoryModel>()
                 for (child in snapshot.children) {
-                    child.getValue(CategoryModel::class.java)?.let { items.add(it) }
+                    if (child.hasChildren()) {
+                        child.getValue(CategoryModel::class.java)?.let { items.add(it) }
+                    }
                 }
                 _category.value = items
             }
@@ -55,7 +57,9 @@ class MainViewModel : ViewModel() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val items = mutableListOf<DoctorModel>()
                 for (child in snapshot.children) {
-                    child.getValue(DoctorModel::class.java)?.let { items.add(it) }
+                    if (child.hasChildren()) {
+                        child.getValue(DoctorModel::class.java)?.copy(key = child.key ?: "")?.let { items.add(it) }
+                    }
                 }
                 _doctors.value = items
             }
