@@ -88,4 +88,5 @@ Make it quick and easy to find the right doctor, review details, and contact or 
 
 ## 📄 License
 
-NIT Jamshedpur
+Vikash Kumar
+National Institute of Technology Jamshedpur
